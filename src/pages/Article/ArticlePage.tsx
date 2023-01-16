@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { fetchArticleById, selectArticle } from '../../store/slices/articleSlice';
 import { Box, Paper, Typography, Container, Skeleton } from '@mui/material';
