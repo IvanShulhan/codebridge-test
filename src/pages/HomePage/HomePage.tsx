@@ -7,10 +7,10 @@ import { fetchArticles, selectArticles } from '../../store/slices/articlesSlice'
 import { SearchBlock } from '../../components/SearchBlock';
 import { ArticleCard } from '../../components/ArticleCard';
 import { sortArticlesList } from '../../utils/helpers';
-import styles from './HomePage.module.scss';
 import { Article } from '../../types/Article';
 import { CardSkeleton } from '../../components/CardSkeleton';
 import { GridItem } from '../../components/GridItem';
+import styles from './HomePage.module.scss';
 
 export const HomePage = () => {
   const [ searchParams ] = useSearchParams();
@@ -21,7 +21,7 @@ export const HomePage = () => {
     dispatch(fetchArticles())
   }, [dispatch]);
 
-  const { articles } = useAppSelector(selectArticles);
+  const { articles, status } = useAppSelector(selectArticles);
   const [sortedList, setSortedList] = useState<Article[]>(articles);
   
   useEffect(() => {
@@ -38,7 +38,7 @@ export const HomePage = () => {
         </Typography>
       <Divider classes={{root: styles.divider}}/>
       <Grid container spacing={{md: '45px', xs: '25px'}}>
-        {Boolean(articles.length) ? (
+        {status === 'idle' ? (
           <>
             {sortedList.map((article) => (
               <Fragment key={article.id}>
