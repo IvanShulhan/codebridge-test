@@ -1,0 +1,29 @@
+.container {
+  max-width: 1320px !important;
+  padding: 35px 15px !important;
+
+  @media (min-width: 900px) {
+    padding-top: 50px !important;
+    padding-bottom: 63px !important;
+  }
+
+  .results {
+    min-height: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #363636;
+    margin-bottom: 5px;
+  }
+  
+  .divider {
+    display: block;
+    background-color: #eaeaea;
+    margin-bottom: 25px;
+
+    @media (min-width: 900px) {
+      margin-bottom: 45px;
+    }
+  };
+}
+
