@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { fetchArticleById, selectArticle } from '../../store/slices/articleSlice';
-import { Box, Paper, Typography, Container, Skeleton } from '@mui/material';
-import styles from './ArticlePage.module.scss';
-import Button from '@mui/material/Button';
+import { Box, Paper, Typography, Container, Skeleton, Button } from '@mui/material';
 import { Arrow } from '../../components/icons/Arrow';
+import { WarningCard } from '../../components/WarningCard';
+import styles from './ArticlePage.module.scss';
 
 export const ArticlePage = () => {
   const { id } = useParams();
@@ -21,7 +21,7 @@ export const ArticlePage = () => {
   const { article, status } = useAppSelector(selectArticle);
 
   if (status === 'failed') {
-    return <>Problem with fetching data</>
+    return <WarningCard />
   }
 
   return (

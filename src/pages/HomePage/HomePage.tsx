@@ -11,6 +11,7 @@ import { Article } from '../../types/Article';
 import { CardSkeleton } from '../../components/CardSkeleton';
 import { GridItem } from '../../components/GridItem';
 import styles from './HomePage.module.scss';
+import { WarningCard } from '../../components/WarningCard';
 
 export const HomePage = () => {
   const [ searchParams ] = useSearchParams();
@@ -26,7 +27,11 @@ export const HomePage = () => {
   
   useEffect(() => {
     setSortedList(sortArticlesList(articles, query))
-  }, [query, articles])
+  }, [query, articles]);
+
+  if (status === 'failed') {
+    return <WarningCard />
+  }
 
   return (
     <Container classes={{root: styles.container}}>
