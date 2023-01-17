@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/codebridge-test/static/css/main.0f9fa9d4.css",
+    "main.css": "/codebridge-test/static/css/main.96ff3dff.css",
     "main.js": "/codebridge-test/static/js/main.ba171f0d.js",
     "index.html": "/codebridge-test/index.html",
-    "main.0f9fa9d4.css.map": "/codebridge-test/static/css/main.0f9fa9d4.css.map",
+    "main.96ff3dff.css.map": "/codebridge-test/static/css/main.96ff3dff.css.map",
     "main.ba171f0d.js.map": "/codebridge-test/static/js/main.ba171f0d.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f9fa9d4.css",
+    "static/css/main.96ff3dff.css",
     "static/js/main.ba171f0d.js"
   ]
 }
